@@ -70,7 +70,7 @@ function insertData(usr_title, usr_description){
     // create xhr object
     const xhr = new XMLHttpRequest();
 
-    xhr.open("POST", "https://nipanepostapi.herokuapp.com/posts", true);
+    xhr.open("POST", `${REQ_URL}/posts`, true);
 
     // set request header
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -135,7 +135,7 @@ function delete_data(msg_id){
     const xhr = new XMLHttpRequest();
 
 
-    const url = `https://nipanepostapi.herokuapp.com/posts/${msg_id}`;
+    const url = `${REQ_URL}/posts/${msg_id}`;
 
     xhr.open("delete", url , true);
 
