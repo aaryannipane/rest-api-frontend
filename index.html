@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATMA from API</title>
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+        html{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .table-container{
+            overflow-x: auto;
+        }
+
+        .table-wrapper{
+            margin-bottom: 20px;
+        }
+
+        #table{
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+            border: 0px solid black;
+            margin-bottom: 10px;
+        }
+        #table thead{
+            background: grey;
+            color: aliceblue;
+        }
+
+        .btn{
+            display: block;
+            width: 100%;
+            padding: 5px;
+            margin: 0 auto;
+            background: tomato;
+            border: 2px solid black;
+            text-transform: uppercase;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width:500px){
+            #table{
+                width: 500px;
+            }
+        }
+
+
+        /* form styling */
+
+        .form-container{
+            border: 2px dashed grey;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-elm{
+            margin: 10px;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        .form-elm input, textarea{
+            width: 100%;
+        }
+
+        textarea{
+            font-size: 16px;
+            padding: 5px;
+            resize:vertical;
+            border: 2px solid black;
+            border-radius: 6px;
+            height: 200px;
+        }
+
+        .form-elm input[type="text"], input[type="password"], input[type="number"]{
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        #msg{
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .msg-success{
+            background: lightgreen;
+            color: green;
+            padding: 5px;
+            font-weight: bold;
+            border: 2px solid green;
+            border-radius: 5px;
+        }
+
+        .msg-failed{
+            background: lightcoral;
+            color: darkred;
+            padding: 5px;
+            font-weight: bold;
+            border: 2px solid darkred;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data from API</h1>
+
+        <div class="table-wrapper">
+            <div class="table-container">
+                    <table border="1" id="table">
+                        <thead>
+                            <th>NAME</th>
+                            <th>MESSAGE</td>
+                            <th>ID</th>
+                        </thead>
+                    </table>
+            </div>
+            <input type="submit" id="getBtn" value="Get all data" class="btn">
+        </div>
+
+        <div class="insert-data-wrapper">
+            <div class="form-container">
+                <h3>INSERT DATA FORM</h3>
+                <form id="insert-form">
+                    <div class="form-elm">
+                        <input type="text" id="user-title" placeholder="NAME" required>
+                    </div>
+                    <div class="form-elm">
+                        <textarea name="desc" id="textarea" placeholder="Enter Message here" required></textarea>
+                    </div>
+                    <div id="msg"></div>
+                    <div class="form-elm">
+                        <input type="submit" id="insert-btn" value="Submit" class="btn">
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+
+        <div class="delete-data-wrapper">
+            <div class="form-container">
+                <h3>DELETE DATA FORM</h3>
+                <form id="delete-form">
+                    <div class="form-elm">
+                        <input type="number" id="msg_no" placeholder="Enter Message Number" min="1" required>
+                    </div>
+                    <div class="form-elm">
+                        <input type="password" id="pss" placeholder="password" required>
+                    </div>
+                    <div class="form-elm">
+                        <input type="submit" id="delete-btn" value="Delete" class="btn">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
