@@ -15,7 +15,7 @@ document.getElementById("getBtn").addEventListener('click', getData);
 function getData(){
     const xhr = new XMLHttpRequest();
 
-    xhr.open("GET", `${REQ_URL}posts`, true);
+    xhr.open("GET", `${REQ_URL}/posts`, true);
 
     xhr.responseType = "json";
 
