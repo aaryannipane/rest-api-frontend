@@ -1,7 +1,7 @@
 // ajax script here
 
-// const REQ_URL = "https://atma.up.railway.app/"
-const REQ_URL = "localhost:8000"
+const REQ_URL = "https://atma.up.railway.app/"
+// const REQ_URL = "localhost:8000"
 
 
 var RESPONSE_DATA = "";
